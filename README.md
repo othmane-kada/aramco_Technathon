@@ -1,8 +1,10 @@
 # aramco_Technathon
 ## 1 step :
-interpolate missing data for DTS separately //DONE
+preprocesiing and interpolate missing data for DTS data //DONE
 ## 2 step 
-interpolate missing data for DAS separately //in process
-## 3 step 
+preprocesiing and clustering of DAS data //DONE
+## 3 step
+DAS to DTS pattern detections // in progress ...
+## 4 step 
 find the direct relation and interssections between DAS/DTS //to be done
 
