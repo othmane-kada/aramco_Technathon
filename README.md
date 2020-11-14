@@ -2,8 +2,10 @@
 ## 1 step :
 preprocesiing and interpolate missing data for DTS data //DONE
 ## 2 step 
+preprocesiing and visualisation of DAS data //DONE
+## 3 step 
 preprocesiing and clustering and trainig of DAS data //DONE
-## 3 step
+## 4 step
 predicting DAS and write h5 files // in progress
 ## 5 step 
 DAS to DTS pattern detections // to be done ...
