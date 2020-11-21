@@ -6,7 +6,7 @@ preprocesiing and visualisation of DAS data //DONE
 ## 3 step 
 preprocesiing and clustering and trainig of DAS data //DONE
 ## 4 step
-predicting DAS and write h5 files // in progress
+predicting DAS and write h5 files // DONE
 ## 5 step 
 DAS to DTS pattern detections // to be done ...
 ## 6 step 
