@@ -1,4 +1,7 @@
 # aramco_Technathon
+## details 
+we are providing a total analyse and processing of DAS(distributed acoustic sensing) and DTS (distributed acousted sensing) of data collected during March 2016 at the PoroTomo Natural Laboratory in Brady's Hot Springs, Nevada.
+
 ## 1 step :
 preprocesiing and interpolate missing data for DTS data //DONE
 ## 2 step 
