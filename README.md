@@ -8,10 +8,10 @@ preprocesiing and clustering and trainig of DAS data //DONE
 ## 4 step
 predicting DAS and write h5 files // DONE
 ## 5 step 
-DAS to DTS pattern detections // to be done ...
+anonality detection in DAS and DTS //DONE
 ## 6 step 
-DTS to DAS pattern detections // to be done ...
-## 7 step 
 find the direct relation and interssections between DAS/DTS //to be done
+## 7 step 
+DAS to DTS pattern detections // to be done ...
 ## 8 step 
-anonality detection !! //DONE
+DTS to DAS pattern detections // to be done ...
