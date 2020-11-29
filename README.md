@@ -13,8 +13,6 @@ predicting DAS and write h5 files // DONE
 ## 5 step 
 anonality detection in DAS and DTS //DONE
 ## 6 step 
-find the direct relation and interssections between DAS/DTS //to be done
-## 7 step 
 DAS to DTS pattern detections // to be done ...
-## 8 step 
+## 7 step 
 DTS to DAS pattern detections // to be done ...
