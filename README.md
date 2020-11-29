@@ -14,4 +14,4 @@ DTS to DAS pattern detections // to be done ...
 ## 7 step 
 find the direct relation and interssections between DAS/DTS //to be done
 ## 8 step 
-anonality detection !! //to be done
+anonality detection !! //DONE
