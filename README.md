@@ -17,6 +17,6 @@ DAS to DTS pattern detections // to be done ...
 ## 7 step 
 DTS to DAS pattern detections // to be done ...
 ## team members:
-Othmane Kada
-Youcef Touahir
-Andrey Mesheryakov
+#### Othmane Kada
+#### Youcef Touahir
+#### Andrey Mesheryakov
