@@ -2,16 +2,16 @@
  ## hardware requirements : 
  GPU with cuda capable 
  our develepment hardware:
- -ubuntu 20.10
- -ram 32 gb /n
- -cpu i5-6400 2.7 ghz /n
- -nvidia geforce GTX 1060 
+ - ubuntu 20.10
+ - ram 32 gb /n
+ - cpu i5-6400 2.7 ghz /n
+ - nvidia geforce GTX 1060 
  ##  requirements requeriment  
  ### you have to install nvidia rapids from here 
  https://rapids.ai/start.html#get-rapids
  ### the rest of envirements from :
- -git clone our repositary then : 
- -with conda - conda create -n dasdts --file req.txt 
- -with pypi -  pip install -r requirements.txt 
+ - git clone our repositary then : 
+ - with conda - conda create -n dasdts --file req.txt 
+ - with pypi -  pip install -r requirements.txt 
 
  
