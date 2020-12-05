@@ -10,10 +10,10 @@
  ### you have to install nvidia rapids from here 
  https://rapids.ai/start.html#get-rapids
  ### the rest of envirements from :
- - git clone our repositary then : 
+     git clone our repositary then : 
  ###  with conda : 
-    - conda create -n dasdts --file req.txt 
+     conda create -n dasdts --file req.txt 
  ### with pypi :  
-    - pip install -r requirements.txt 
+     pip install -r requirements.txt 
 
  
