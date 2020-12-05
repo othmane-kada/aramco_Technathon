@@ -13,9 +13,9 @@ predicting DAS and write h5 files // DONE
 ## 5 step 
 anonality detection in DAS and DTS //DONE
 ## 6 step 
-DAS to DTS pattern detections // to be done ...
+DAS to DTS patterns detection // DONE
 ## 7 step 
-DTS to DAS pattern detections // to be done ...
+DTS to DAS patterns detection // to be done ...
 ## team members:
 #### Othmane Kada
 #### Youcef Touahir
