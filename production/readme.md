@@ -3,8 +3,8 @@
  GPU with cuda capable 
  our develepment hardware:
  - ubuntu 20.10
- - ram 32 gb /n
- - cpu i5-6400 2.7 ghz /n
+ - ram 32 gb
+ - cpu i5-6400 2.7 ghz
  - nvidia geforce GTX 1060 
  ##  requirements requeriment  
  ### you have to install nvidia rapids from here 
