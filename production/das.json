@@ -1,0 +1,15 @@
+{
+"input":"/home/osman/aramko/inputs/das",
+"output":"/media/osman/osm/arakoout",
+"params":{
+ "numsimp" : 300,
+ "window_size" : 20,
+ "test_size" : 0.2,
+ "features":3,
+ "epochs":50,
+ "lstm_size":300,
+ "drops":0.2,
+ "lr":0.005,
+ "batch_size":600
+}
+}

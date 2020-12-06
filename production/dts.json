@@ -1,0 +1,13 @@
+{
+"forwrd":"/home/osman/aramko/inputs/DTSV_data_gapsss.csv",
+"backwrd":"/home/osman/aramko/inputs/DTSV_data_gaps22.csv",
+"output":"/home/osman/aramko/inputs/output",
+"params":{
+ "n_estimators" : 10,
+ "window_size" : 5,
+ "test_size" : 0.2,
+ "deph_col": "Depth (m)",
+ "temp_col": "temperature",
+ "time_col": "time"
+}
+}
