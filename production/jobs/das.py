@@ -17,14 +17,15 @@ import tensorflow as tf
 from keras.models import Sequential
 from keras.layers import Dense,LSTM,Dropout
 from keras.optimizers import  Adam,RMSprop
+import dask.array as da
+
 class das :
     def __init__(self,config):
-        print(config)
         self.numsimp = config['params']['numsimp']
         self.window_size = config['params']['window_size']
         self.test_size = config['params']['test_size']
         self.features=config['params']['features']
-        self.epochs=2#config['params']['epochs']
+        self.epochs=config['params']['epochs']
         self.lstm_size=config['params']['lstm_size']
         self.drops=config['params']['drops']
         self.lr=config['params']['lr']
@@ -39,6 +40,7 @@ class das :
         self.filesdf['name'] = self.filesdf['file'].swifter.apply(lambda x: x.split('/')[-1].replace('.h5', ''))
         self.chanels = list(self.h5_reader(self.filesdf['file'][0])['channel'])
         self.all_files=self.filenames_finder(self.filesdf)
+
     def run(self):
         print('starting initialisation')
         start_time = time.time()
@@ -58,19 +60,16 @@ class das :
 
         for i in self.all_files[self.all_files['output'] == 1].index:
             self.predicter(i)
-
-        self.all_files['file'] = self.all_files.swifter.apply(
-            lambda x: self.generating_missed_files(self.filesdf['file'][0], x['name'], x['start']) if x['output'] == 1 else x[
-                'file'], axis=1)
-
         self.output = self.all_files[self.all_files['output'] == 1].copy().reset_index(drop=True)
         self.extract = self.all_files[self.all_files['output'] == 0].copy().reset_index()
         for ch in range(len(self.chanels)):
             self.get_nearest(ch)
-        print("prediction time  is is {} seconds".format(time.time()-start_time))
+        print("prediction time  is is {} seconds".format(time.time() - start_time))
         start_time = time.time()
         print('starting writing results')
-        self.writer()
+        self.filesdf['xarray'] = self.filesdf['file'].swifter.apply(lambda x: da.from_array(self.das_array_extracter(x)))
+        print('preparation finished !!')
+        self.output.swifter.apply(lambda x: self.generating_missed_files(x), axis=1)
         print("writing results time  is is {} seconds".format(time.time()-start_time))
         return self.model
 
@@ -82,6 +81,9 @@ class das :
 
     def das_extracter(self,f):
         return pd.DataFrame(np.array(self.h5_reader(f).get('das')))
+
+    def das_array_extracter(self,f):
+        return self.h5_reader(f).get('das')
 
     def filename_extracter(self,last_file_name):
         if last_file_name[-2:] == '17':
@@ -210,29 +212,17 @@ class das :
         f1.close()
         return dest
 
-    def das_ins(self,index, chanel):
-        with h5py.File(self.output.loc[index]['file'], 'r+') as f1:
-            with h5py.File(self.filesdf['file'][self.output.loc[index][chanel]], 'r') as f2:
-                f1['das'][:, chanel] = f2['das'][:, chanel]
-        f1.close()
-        f2.close()
+    def das_collecter(self,x):
+        return da.stack([self.filesdf['xarray'][x[i]][:,i] for i in range(384) ], axis=1).compute()
 
-    def writer(self):
-        for i in range(len(self.chanels)):
-            for j in range(len(self.output)):
-                self.das_ins(chanel = i,index=j)
-            # with multiprocessing.Pool(multiprocessing.cpu_count()) as pool:
-            #     pool.map(partial(self.das_ins, chanel=i), range(len(self.output)))
-            print(i)
-
-def writer(das):
-    for i in range(len(das.chanels)):
-            with multiprocessing.Pool(multiprocessing.cpu_count()) as pool:
-                pool.map(partial(das.das_ins, chanel=i), range(len(das.output)))
-                print(i)
-def das_ins(das,index, chanel):
-        with h5py.File(das.output.loc[index]['file'], 'r+') as f1:
-            with h5py.File(das.filesdf['file'][das.output.loc[index][chanel]], 'r') as f2:
-                f1['das'][:, chanel] = f2['das'][:, chanel]
-        f1.close()
+    def generating_missed_files(self,x):
+        rep = self.rep + '/'
+        dest = rep +x['name'] + '.h'
+        with h5py.File(self.filesdf['file'][0], 'r') as f1:
+            with h5py.File(dest, 'w') as f2:
+                for ds in f1.keys():
+                    f1.copy(ds, f2)
+                f2['t'][:] = np.array(range(x['start'], x['start'] + 30000))
+                f2['das'][:] = self.das_collecter(x)
         f2.close()
+        f1.close()
