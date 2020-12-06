@@ -6,7 +6,7 @@
  - ram 32 gb
  - cpu i5-6400 2.7 ghz
  - nvidia geforce GTX 1060 
- ##  requirements requeriment  
+ ##  software requeriments  
  ### you have to install nvidia rapids from here 
  https://rapids.ai/start.html#get-rapids
  ### the rest of envirements from :
