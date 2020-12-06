@@ -1,6 +1,6 @@
 {
-"input":"/home/osman/aramko/inputs/das",
-"output":"/media/osman/osm/arakoout",
+"input":"inputs/das",
+"output":"output/das",
 "params":{
  "numsimp" : 300,
  "window_size" : 20,
