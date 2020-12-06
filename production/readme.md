@@ -16,4 +16,26 @@
  ### with pypi :  
      pip install -r requirements.txt 
 
- 
+ ## how to use
+    python main.py -h           -to see help
+    python main.py --das_config das.json --dts_config dts.json         -to process DAs and DTS 
+    python main.py --das_config das.json                               -to process just DAS
+    python main.py --dt_config dts.json                                -to process just DTS
+ ## exemple of configs:  
+   #### DAS  only input and output are required the params are optional !
+   ```json
+{
+"input":"/aramco/inputs/das",
+"output":"aramco/out",
+"params":{
+ "numsimp" : 300,
+ "window_size" : 20,
+ "test_size" : 0.2,
+ "features":3,
+ "epochs":50,
+ "lstm_size":300,
+ "drops":0.2,
+ "lr":0.005,
+ "batch_size":600
+}
+}     ```
