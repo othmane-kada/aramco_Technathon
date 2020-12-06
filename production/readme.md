@@ -43,7 +43,7 @@
    #### DTS : only forwrd,backwrd and output are required the params are optional !
    ```json
 {
-"forwrd":aramco/inputs/DTSV_data_gapsss.csv",
+"forwrd":"aramco/inputs/DTSV_data_gapsss.csv",
 "backwrd":"aramco/inputs/DTSV_data_gaps22.csv",
 "output":"aramco/output/dts",
 "params":{
