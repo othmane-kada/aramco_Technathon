@@ -26,7 +26,7 @@
    ```json
 {
 "input":"/aramco/inputs/das",
-"output":"aramco/out",
+"output":"aramco/output/das",
 "params":{
  "numsimp" : 300,
  "window_size" : 20,
@@ -38,21 +38,21 @@
  "lr":0.005,
  "batch_size":600
 }
-}     ```
-   #### DAS : only input and output are required the params are optional !
+}     
+```
+   #### DTS : only forwrd,backwrd and output are required the params are optional !
    ```json
 {
-"input":"/aramco/inputs/das",
-"output":"aramco/out",
+"forwrd":aramco/inputs/DTSV_data_gapsss.csv",
+"backwrd":"aramco/inputs/DTSV_data_gaps22.csv",
+"output":"aramco/output/dts",
 "params":{
- "numsimp" : 300,
- "window_size" : 20,
+ "n_estimators" : 10,
+ "window_size" : 5,
  "test_size" : 0.2,
- "features":3,
- "epochs":50,
- "lstm_size":300,
- "drops":0.2,
- "lr":0.005,
- "batch_size":600
+ "deph_col": "Depth (m)",
+ "temp_col": "temperature",
+ "time_col": "time"
 }
-}     ```
+}     
+```
