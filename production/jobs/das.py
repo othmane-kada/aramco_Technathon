@@ -200,18 +200,6 @@ class das :
         NN.fit(pd.DataFrame(self.extract[chanel].values.tolist()))
         self.output[chanel] = NN.kneighbors(pd.DataFrame(self.output[chanel].values.tolist()), return_distance=False)
 
-    def generating_missed_files(self,exemple, dest, t):
-        rep = self.rep+'/'
-        dest = rep + dest + '.h'
-        with h5py.File(exemple, 'r') as f1:
-            with h5py.File(dest, 'w') as f2:
-                for ds in f1.keys():
-                    f1.copy(ds, f2)
-                f2['t'][:] = np.array(range(t, t + 30000))
-        f2.close()
-        f1.close()
-        return dest
-
     def das_collecter(self,x):
         return da.stack([self.filesdf['xarray'][x[i]][:,i] for i in range(384) ], axis=1).compute()
 
