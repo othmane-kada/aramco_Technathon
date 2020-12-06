@@ -1,5 +1,5 @@
-#### Aramco Upstream Solutions Technathon 2020 
-#### task2) Distributed fiber optic measurement data
+# Aramco Upstream Solutions Technathon 2020 
+### task 2: Distributed fiber optic measurement data
 # production model for DAS and DTS missed data reconstruction 
  ## hardware requirements : 
  GPU with cuda capable 
