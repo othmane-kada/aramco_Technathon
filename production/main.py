@@ -21,9 +21,7 @@ class dasdts:
         self.__init__()
         print("initialisation time is is {} seconds".format(time.time()-start_time))
         print('starting configs verification')
-        start_time = time.time()
         self.verify_config_files(self.parser)
-        print("config verification time is is {} seconds".format(time.time()-start_time))
 
     def read_file_content(self,path):
         if os.path.isfile(path):
