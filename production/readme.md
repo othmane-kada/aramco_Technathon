@@ -65,5 +65,5 @@
     Othmane Kada
     Youcef Touahir
     Andrey Mesheryakov
-### superviser 
+### supervisor 
     Timur Zharnikov 
